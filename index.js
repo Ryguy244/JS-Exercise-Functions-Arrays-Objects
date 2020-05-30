@@ -169,9 +169,13 @@ console.log(getName(objName));
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+const fruits = ['peach', 'banana', 'mango', 'apple'];
+
+function appleIndex(arrayName) {
+  let indexed = arrayName.indexOf('apple');
+  return indexed;
 }
+console.log(appleIndex(fruits));
 
 /**
  * ### Challenge `isItAnApple`
@@ -188,11 +192,11 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(stringArray) {
+  mappedArray = stringArray.map(fruits => fruits === 'apple');
+  return mappedArray;
 }
-
-
+console.log(isItAnApple(fruits));
 
 
 // ⭐️ Example Test Data ⭐️
@@ -246,8 +250,10 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  const desiredRow = inventory[index];
+  return `This is a ${desiredRow.car_make} ${desiredRow.car_model}.`;
 }
+console.log(getCarInfoByIndex(inventory, 0));
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -260,9 +266,12 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+
+function getLastCarInfo(miscInventory) {
+  const lastCar = miscInventory[miscInventory.length - 1];
+    return `This is a ${lastCar.car_make} ${lastCar.car_model}.`;
 }
+console.log(getLastCarInfo(inventory));
 
 /**
  * ### Challenge `getModelYears`
