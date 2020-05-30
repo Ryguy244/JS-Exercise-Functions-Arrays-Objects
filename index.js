@@ -54,11 +54,11 @@ console.log(sayGoodbye('Ryan'));
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(num1) {
-  let converter = (num1 * 9 / 5 + 32);
-  return converter;
+function temperatureCtoF(tempNum) {
+  let cConverter = (tempNum * 9 / 5 + 32);
+  return Math.round(cConverter) + 'F';
 }
-console.log(Math.round(temperatureCtoF(24)));
+console.log(temperatureCtoF(24));
 /**
  * ### Challenge `temperatureInF`
  * 
@@ -76,10 +76,31 @@ console.log(Math.round(temperatureCtoF(24)));
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(tempNum, degree) {
-  if (degree === C)
-    return temperatureCtoF
+function temperatureFtoC(tempNum) {
+  let cConverter = (tempNum - 32) * 5 / 9;
+  return Math.round(cConverter) + 'C';
 }
+console.log(temperatureFtoC(75));
+
+// let cConverter = (tempNum - 32) * 5 / 9;
+// let fConverter = tempNum * 9 / 5 + 32;
+
+//  let tempNum = fConverter; 
+//  let degree = F
+
+
+// let degree = cConverter;
+// let degree = C;
+
+const temperatureInF = (tempNum, degreeUnit) => {
+  if (degreeUnit === "F") {
+      return tempNum + 'F';
+  } else {
+    let degreeUnit = "F";
+      return temperatureCtoF (tempNum, degreeUnit);
+      }
+}
+console.log(temperatureInF(32, "C"));
 
 
 /**
@@ -98,9 +119,15 @@ function temperatureInF(tempNum, degree) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(ID, name, email) {
+  const obj = {
+    Identification: ID,
+    Name: name,
+    Email: email,
+  };
+  return obj;
 }
+console.log(makePersonObject(24, 'Ryan', 'rbclark'));
 
 /**
  * ### Challenge `getName`
@@ -115,9 +142,16 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+const objName = {
+  Identification: 24,
+  Name: 'Ryan',
+  Email: 'rbclark',
 }
+
+function getName(object) {
+  return `Hello, my name is  ${objName.Name}` 
+}
+console.log(getName(objName));
 
 
 /**
