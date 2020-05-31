@@ -193,10 +193,22 @@ console.log(appleIndex(fruits));
  * the returned value should be: [ false, true, false, false, true, false ].
 */
 function isItAnApple(stringArray) {
-  mappedArray = stringArray.map(fruits => fruits === 'apple');
-  return mappedArray;
+  const emptyFruits = [];
+  // let longness = (stringArray.length);
+  for (let i = 0; i <= 3; i++) {
+    if (stringArray === 'apple') {
+      emptyFruits.push(true);
+    } else {
+      emptyFruits.push(false);
+    }
+  }
+  return emptyFruits;
 }
 console.log(isItAnApple(fruits));
+//   mappedArray = stringArray.map(fruits => fruits === 'apple');
+//   return mappedArray;
+// }
+// console.log(isItAnApple(fruits));
 
 
 // ⭐️ Example Test Data ⭐️
@@ -282,9 +294,24 @@ console.log(getLastCarInfo(inventory));
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(miscInventory) {
+  let iterator = miscInventory.entries(4);
+
+  for (const car_year in iterator) {
+     return (iterator);
 }
+}
+console.log(getModelYears(inventory));
+
+
+// for (let car_year in miscInventory) {
+//   console.log(miscInventory[car_year]);
+// }
+// }
+// getModelYears(inventory);
+  // yearMap = miscInventory.map(car_year => car_year);
+  // return yearMap;
+
 
 /**
  * ### Challenge `getCarInfoById`
