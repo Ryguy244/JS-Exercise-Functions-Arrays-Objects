@@ -341,7 +341,7 @@ console.log(getModelYears(inventory));
 function getCarInfoById(miscInventory, carID) {
   let indexed = (carID - 1);
   let desiredRow = miscInventory[indexed];
-  return `This is a ${desiredRow.car_make} ${desiredRow.car_model}.`;
+  return `This is a ${desiredRow.car_make}, ${desiredRow.car_model}.`;
 }
 console.log(getCarInfoById(inventory, 3))
 
@@ -360,9 +360,17 @@ console.log(getCarInfoById(inventory, 3))
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
-  /* code here */
+function getOlderCars(miscInventory, maxYear) {
+  let oldies = [];
+  for (let car of miscInventory) {
+    if (car.car_year < maxYear) {
+      oldies.push(car.car_year);
+  } else {
+  }
 }
+  return oldies;
+}
+console.log(getOlderCars(inventory, 1995))
 
 /**
  * ### Challenge `getGermanCars`
