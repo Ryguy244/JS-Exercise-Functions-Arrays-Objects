@@ -196,7 +196,7 @@ function isItAnApple(stringArray) {
   const emptyFruits = [];
   // let longness = (stringArray.length);
   for (let i = 0; i <= 3; i++) {
-    if (stringArray === 'apple') {
+    if (stringArray[i] === 'apple') {
       emptyFruits.push(true);
     } else {
       emptyFruits.push(false);
@@ -295,13 +295,24 @@ console.log(getLastCarInfo(inventory));
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
 function getModelYears(miscInventory) {
-  let iterator = miscInventory.entries(4);
-
-  for (const car_year in iterator) {
-     return (iterator);
-}
+   let blank = [];
+    for (let car of miscInventory) {
+      blank.push(car.car_year);
+    }
+    return blank;
 }
 console.log(getModelYears(inventory));
+//   const carYears = miscInventory.some(miscInventory => miscInventory > 1);
+//   return carYears;
+// }
+// console.log(getModelYears(inventory))
+//   let blank = [];
+//   for (let car_year in miscInventory) {
+//     blank.push(miscInventory.car_year);
+//     return blank;
+//   }
+// }
+// console.log(getModelYears(inventory));
 
 
 // for (let car_year in miscInventory) {
@@ -327,9 +338,13 @@ console.log(getModelYears(inventory));
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(miscInventory, carID) {
+  let indexed = (carID - 1);
+  let desiredRow = miscInventory[indexed];
+  return `This is a ${desiredRow.car_make} ${desiredRow.car_model}.`;
 }
+console.log(getCarInfoById(inventory, 3))
+
 
 /**
  * ### Challenge `getOlderCars`
