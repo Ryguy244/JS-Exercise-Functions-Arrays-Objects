@@ -385,9 +385,23 @@ console.log(getOlderCars(inventory, 1995))
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
-  /* code here */
-}
+function getGermanCars(miscInventory) {
+  let newG = [];
+  for (let car of miscInventory) {
+    if (car.car_make === 'Audi') {
+      newG.push(car.car_make);
+    } else if (car.car_make === 'Mercedes-Benz') {
+        newG.push(car.car_make);
+    } else if (car.car_make === 'Volkswagen') {
+        newG.push(car.car_make);
+    } else if (car.car_make === 'BMW') {
+        newG.push(car.car_make);
+    } else {
+    }
+  }
+  return newG;
+} 
+  console.log(getGermanCars(inventory));
 
 /**
  * ### Challenge `carMaker`
